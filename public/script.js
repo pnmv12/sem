@@ -1,5 +1,5 @@
 // Firebase config (замени на свои значения)
-/*const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1K8qRZwxPomv9\nYGWmN+X4hLPOxldL9Ovxq5LugSDNeR7qiXhsmPQEj/P2Mb7EzFFoj7sRhNCr1ddT\n83QAWlLda8I+SOCJIA9lS57WUqbREPboO9fkGQAIcFbXHEb35oj4A13ThxfPcGH7\nMzW/rSyU00ORwth8Xg0imgkL79GopVgBS0e0phOjpZ0N0maC6W1Fd68vB5781qhg\nWJD3ag7TXpx8A2DiItcjKh525KfJ7q1xEWfi7DJAxwk/3PpWmepiqeNvNTUuGLbr\n8OY6Q7dCPiepnqPCtucONMXui5x7g898CieBG+cKahMJyUMmaE1ijr4YTzV74ixd\nheKa/1E9AgMBAAECggEAFElfiPGTiNVEp14kc7zdpPrjEXvXKZu20dxm+wr9i9SM\nuDGFiQ+Ff39JD5/ZXzsLwJwbk+Yd4afz0SQ5MJLspXucCBJsBh7PaoXRtukRYea2\n5yFQVuvPu6IsrzCs57RqUO87keSWL3XDmvfMhHaVP+L6NXeuexqi+OVrruj/PpV4\n7sKB0ZwT4uAYta3CSRjvZ79atvkR2OC0rTqtpv0nkIuboTYzgWPFbimD9+WR3lYb\nsc2Ldgywi6CxeKGFwMGNHJ0hnfBbpFTvRwlxPHOjyjD1asehUgkYT6qljpglhUXY\nV+Zpgle1XH6ioY9jxoLJXdtUjKVrlorKmC6pUUZo9wKBgQDXr+qfm/tgK5Fnmpco\nONz3//oSSH5xATEpvdqOCsJseiRFE+v906qo5Ksn+J0UkLm3igg6B1eKCu1owLBH\nVkvhQD4QDKVE0RzaEMHhUDjizoLm5/r4ln/bJMSbV4V7tXHzBg4/EAozFUwCGTuX\n00s9m63F8iqViL2B4M1HIUFMTwKBgQDXCF3LGVDWtDzmCxosjjSOyHkUSAc0yYzq\nqCqAhTGwEZGvpzz8IGhrS1pP58Te+nw++KByVS7O9LrWgQ7/xbSnMMAQU2fjgGyA\nQZjQfItNFq+QF8j06az/FSrX0Wnb3LbpxzicNcrzNqXrZaj0ZMw9DU3CjL1OX6fc\nonUNsI4qswKBgQCyBVSV4Fyeh9c/t+zDGgvn9bMlnAggpWc6mKTnUCIg/r8o9MR3\ngFj/hZ1vJFgiPUHMJ3Waz6yFF3fUWhYlCykeBbQz8vwFzMMPiX08xsXtDZ4lj5sp\nyq5E5hgQTzCxZpVijMD9c/O3LgDKSqFRMuiLNQ88riBPw8kGhdFowB3xKQKBgB19\njD96bVfEyEVUaHaL2jFq1RAvAK4Apk7YWVve6H2ZKz3H1dlOKIPuhahHxPw/piKM\nvpRvkkfX0Hfyozf4yVnUmcKjbbAJwNemJ2sQaZpc7h745BqSoaMqKAIJOldo4b0W\nEXF6/yZz7DVob890s338ARoZay0AeWkM7ri96gF5AoGBAKDD0+pdNeV4sWiRtlwO\n1hhV7D8PhmYM87VLmvH5PsuTjlCQorNtIomS3fsqmVMQOqjHhTZdoZ7nsZ+R6Jxr\nPw6v6MKX7tTikHpA+Z/yXeDJKQmKSndNTlykYwnwnW/nGTtNeObMgbB2P9/zbAzx\nlHEbCCrZS+Ak7ZPpYnLrcSCl\n-----END PRIVATE KEY-----\n",
     authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
     projectId: "semka-36384",
@@ -10,7 +10,7 @@
 };
 
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();*/
+const auth = firebase.auth();
 
 // Získávání prvků ze stránky / Inicializace sekcí
 const navHome = document.getElementById('nav-home');
