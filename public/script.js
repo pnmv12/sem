@@ -305,10 +305,10 @@ async function handleEdit(e) {
     const newName = prompt('New First Name:', idea.name);
     const newProposal = prompt('New Proposal:', idea.proposal);
     const newDate = prompt('New Date (YYYY-MM-DD):', idea.date);
-    const newNumber = prompt('New Phone:', idea.number || '');
-    if (newName === null || newProposal === null || newDate === null || newNumber === null) return;
-    const parametry = ['name', 'proposal', 'date', 'number'];
-    const values = [newName, newProposal, newDate, newNumber];
+  //  const newNumber = prompt('New Phone:', idea.number || '');
+    if (newName === null || newProposal === null || newDate === null /*|| newNumber === null/*) return;
+    const parametry = ['name', 'proposal', 'date',/* 'number'*/];
+    const values = [newName, newProposal, newDate/*, newNumber*/];
     await fetch('/api/edit', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
