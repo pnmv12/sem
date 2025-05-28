@@ -82,7 +82,7 @@ adminLoginForm.onsubmit = async function(e) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({email, password })
     });
-    if(res.success){
+    if(res.ok){
             loginErrorMessage.style.display = 'none';
             alert('Admin logged in!');
             adminLoginForm.reset();
