@@ -136,7 +136,7 @@ async function fetchProblemAndReward() {
  async function fetchAndDisplayIdeas() {
    const res = await fetch('/api/get');
    const data = await res.json();
-            currentIdeas = [];
+           let currentIdeas = [];
             for (key in data) {
                 const idea = data[key];
                 idea.idFirebase = key;
