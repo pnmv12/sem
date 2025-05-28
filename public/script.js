@@ -198,11 +198,10 @@ ideaSubmissionForm.onsubmit = async function(e) {
     e.preventDefault();
     const newIdea = {
         id: 'user-' + Date.now(),
-        datum: ideaSubmissionForm['submit-date'].value,
+        date: ideaSubmissionForm['submit-date'].value,
         email: ideaSubmissionForm['submit-email'].value,
-        jmeno: ideaSubmissionForm['submit-name'].value,
+        name: ideaSubmissionForm['submit-name'].value,
         pocet: 1,
-        telefon: '',
         proposal: ideaSubmissionForm['submit-proposal'].value,
         isGood: false
     };
