@@ -344,22 +344,16 @@ async function handleStarToggle(e) {
         return;
     }
     const newIsGood = !idea.isGood;
-    await fetch('/api/edit', {
+   const res =  await fetch('/api/edit', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ idFirebase: idFirebase, parametry: ['isGood'], hodnoty: [newIsGood] })
     })
-    .then(function(res) { return res.json(); })
-    .then(function(result) {
-        if (result.success) {
-            fetchAndDisplayIdeas();
-        } else {
-            alert('Failed to update status.');
-        }
-    })
-    .catch(function() {
-        alert('Error updating status.');
-    });
+    if(res.ok){
+        alert("star ok");
+    }else{
+        alert("star not ok");
+    }
 }
 
 // Inicializace grafu pro statistiky nápadů
