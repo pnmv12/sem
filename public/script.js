@@ -7,10 +7,10 @@
     messagingSenderId: "442535772082",
     appId: "YOUR_FIREBASE_APP_ID",
     databaseURL: "https://semka-36384-default-rtdb.europe-west1.firebasedatabase.app/"
-};*/
+};
 
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const auth = firebase.auth(); */
 
 // Získávání prvků ze stránky / Inicializace sekcí
 const navHome = document.getElementById('nav-home');
