@@ -2,7 +2,7 @@ import {getDatabase} from './database.js';
 
 export default async function handler(request, response) { // Definuje a exportuje asynchronní funkci handler, která zpracovává HTTP požadavky.
     const database = getDatabase(); // Získání databáze
-    const {idFirebase, parametry, hodnoty} = request.body;
+    const { idFirebase, parametry, hodnoty} = request.body;
 
     const solutionLink = database.ref('solution').child(idFirebase); // Odkaz na konkrétní rezervaci v databázi
 
