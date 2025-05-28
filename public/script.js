@@ -37,7 +37,7 @@ const postProblemButton = document.getElementById('post-problem-button');
 const currentProblemDisplay = document.getElementById('current-problem-display');
 const currentRewardDisplay = document.getElementById('current-reward-display');
 
-const currentIdeas = [];
+let currentIdeas = [];
 
 // Nastavení navigačních odkazů
 function showSection(section) {
@@ -136,7 +136,7 @@ async function fetchProblemAndReward() {
  async function fetchAndDisplayIdeas() {
    const res = await fetch('/api/get');
    const data = await res.json();
-           let currentIdeas = [];
+           currentIdeas = [];
             for (key in data) {
                 const idea = data[key];
                 idea.idFirebase = key;
