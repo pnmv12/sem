@@ -1,7 +1,6 @@
 import { getDatabase } from './database.js';
 
 export default async function handler(request, response){
-    // Removed unnecessary fields like cas_od, cas_do, pocet, telefon if they are not used
     const { id, date, email, name,pocet, proposal, isGood} = request.body; // Added proposal and isGood
     const database = getDatabase();
     const newList = database.ref('solution').push();
