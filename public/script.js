@@ -134,22 +134,17 @@ async function fetchProblemAndReward() {
 
 // Funkce pro načtení a zobrazení nápadů
  async function fetchAndDisplayIdeas() {
-   await fetch('/api/get')
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
+   const res = await fetch('/api/get');
+   const data = await res.json();
             currentIdeas = [];
             for (key in data) {
                 const idea = data[key];
                 idea.idFirebase = key;
                 currentIdeas.push(idea);
             }
+            console.log('penis')
             renderIdeas();
             updateStatisticsChart();
-        })
-        .catch(function() {
-            userIdeaList.innerHTML = '<li>Error loading ideas.</li>';
-            adminIdeaList.innerHTML = '<li>Error loading ideas.</li>';
-        });
 }
 
 // Zobrazení nápadů pro uživatele a administrátora
