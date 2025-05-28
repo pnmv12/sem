@@ -328,7 +328,7 @@ async function handleEdit(e) {
 // Přepínání hvězdičky pro označení dobrého nápadu
 async function handleStarToggle(e) {
     const idFirebase = e.target.getAttribute('data-id');
-    const idea = null;
+    let idea = null;
     for (let i = 0; i < currentIdeas.length; i++) {
         if (currentIdeas[i].idFirebase === idFirebase) {
             idea = currentIdeas[i];
