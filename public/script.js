@@ -218,7 +218,6 @@ ideaSubmissionForm.onsubmit = async function(e) {
         date: ideaSubmissionForm['submit-date'].value,
         email: ideaSubmissionForm['submit-email'].value,
         name: ideaSubmissionForm['submit-name'].value,
-        pocet: 1,
         proposal: ideaSubmissionForm['submit-proposal'].value,
         isGood: false
     };
