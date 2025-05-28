@@ -162,7 +162,7 @@ function renderIdeas() {
         const idea = currentIdeas[i];
         const userLi = document.createElement('li');
         userLi.className = 'idea-item';
-         adminLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p><p>Contact: " + idea.telefon + " | ID: " + idea.id + "</p></div>" +
+        userLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p><p>Contact: " + idea.telefon + " | ID: " + idea.id + "</p></div>" +
                 '<div class="actions">' +
                 '<span class="star-icon' + (idea.isGood ? ' starred' : '') + '" data-id="' + idea.idFirebase + '">&#9733;</span>' +
                 '<button class="edit-btn" data-id="' + idea.idFirebase + '">Edit</button>' +
