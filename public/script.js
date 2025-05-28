@@ -275,24 +275,18 @@ postProblemButton.onclick = async function() {
 // Smazání nápadu administrátorem
 async function handleDelete(e) {
     var idFirebase = e.target.getAttribute('data-id');
+    console.log(idFirebase)
     if (!confirm('Delete this idea?')) return;
-    await fetch('/api/delete', {
-        method: 'POST',
+   res = await fetch('/api/delete', {
+        method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(idFirebase)
     })
-    .then(function(res) { return res.json(); })
-    .then(function(result) {
-        if (result.success) {
-            alert('Idea deleted!');
-            fetchAndDisplayIdeas();
-        } else {
-            alert('Failed to delete.');
-        }
-    })
-    .catch(function() {
-        alert('Error deleting idea.');
-    });
+   if(res.ok){
+       alert("Deleted");
+   }else{
+       alert("not deleted");
+   }
 }
 
 // Editace nápadu administrátorem
@@ -317,7 +311,7 @@ async function handleEdit(e) {
     const parametry = ['name', 'proposal', 'date', 'number'];
     const values = [newName, newProposal, newDate, newNumber];
     await fetch('/api/edit', {
-        method: 'POST',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ idFirebase: idFirebase, parametry: parametry, values: values })
     })
@@ -351,7 +345,7 @@ async function handleStarToggle(e) {
     }
     const newIsGood = !idea.isGood;
     await fetch('/api/edit', {
-        method: 'POST',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ idFirebase: idFirebase, parametry: ['isGood'], hodnoty: [newIsGood] })
     })
