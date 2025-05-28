@@ -155,14 +155,14 @@ function renderIdeas() {
         const idea = currentIdeas[i];
         const userLi = document.createElement('li');
         userLi.className = 'idea-item';
-        userLi.innerHTML = "<div><h3>" + idea.jmeno + "</h3><p>Date: " + idea.datum + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p></div>";
+        userLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p></div>";
         userIdeaList.appendChild(userLi);
 
         if (auth.currentUser) {
             const adminLi = document.createElement('li');
             adminLi.className = 'idea-item';
             adminLi.setAttribute('data-id', idea.idFirebase);
-            adminLi.innerHTML = "<div><h3>" + idea.jmeno + "</h3><p>Date: " + idea.datum + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p><p>Contact: " + idea.telefon + " | ID: " + idea.id + "</p></div>" +
+            adminLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p><p>Contact: " + idea.telefon + " | ID: " + idea.id + "</p></div>" +
                 '<div class="actions">' +
                 '<span class="star-icon' + (idea.isGood ? ' starred' : '') + '" data-id="' + idea.idFirebase + '">&#9733;</span>' +
                 '<button class="edit-btn" data-id="' + idea.idFirebase + '">Edit</button>' +
