@@ -344,10 +344,14 @@ async function handleStarToggle(e) {
         return;
     }
     const newIsGood = !idea.isGood;
+    let parametry = [];
+    let hodnoty = [];
+    parametry.push('isGood');
+    hodnoty.push(newIsGood);
    const res =  await fetch('/api/edit', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idFirebase: idFirebase, parametry: ['isGood'], hodnoty: [newIsGood] })
+        body: JSON.stringify({ idFirebase, parametry, hodnoty})
     })
     if(res.ok){
         alert("star ok");
