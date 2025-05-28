@@ -175,7 +175,7 @@ function renderIdeas() {
                 '<button class="delete-btn" data-id="' + idea.idFirebase + '">Delete</button>' +
                 '</div>';
         }else{
-               userLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p><p>Contact: " + idea.telefon + ";
+                userLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p> </div>";
         }
      
         userIdeaList.appendChild(userLi);
