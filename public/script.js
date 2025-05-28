@@ -184,7 +184,7 @@ function renderIdeas() {
         }
     }
 
-    if (auth.currentUser) {
+    if (isAdmin) {
         const deleteBtns = document.querySelectorAll('.delete-btn');
         for (let i = 0; i < deleteBtns.length; i++) {
             deleteBtns[i].onclick = handleDelete;
