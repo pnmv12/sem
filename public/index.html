@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Exchange Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Idea Exchange Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-home">Home</a></li>
+                <li><a href="#" id="nav-submit">Submit Your Idea</a></li>
+                <li><a href="#" id="nav-admin-login">Admin Login</a></li>
+                <li><a href="#" id="nav-logout" style="display:none;">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-section">
+            <h2>Current Problem:</h2>
+            <div id="current-problem-display">
+                <p>No problem posted yet. Check back soon!</p>
+            </div>
+            <h2>Reward for the Best Solution:</h2>
+            <div id="current-reward-display">
+                 <p>No reward specified yet.</p>
+            </div>
+        </section>
+
+        <section id="submit-idea-section" style="display:none;">
+            <h2>Submit Your Solution</h2>
+            <form id="idea-submission-form">
+                <label for="submit-name">First Name:</label>
+                <input type="text" id="submit-name" required>
+
+                <label for="submit-email">Email:</label>
+                <input type="email" id="submit-email" required>
+
+                <label for="submit-proposal">Your Solution Proposal:</label>
+                <textarea id="submit-proposal" rows="10" required></textarea>
+
+                <label for="submit-date">Date Submitted:</label>
+                <input type="date" id="submit-date" required>
+
+                <button type="submit">Submit Idea</button>
+            </form>
+        </section>
+
+        <section id="admin-login-section" style="display:none;">
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <label for="admin-email">Email:</label>
+                <input type="email" id="admin-email" required>
+
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-error-message" style="color: red; display: none;"></p>
+        </section>
+
+        <section id="admin-panel-section" style="display:none;">
+            <h2>Admin Panel</h2>
+            <div id="admin-problem-post">
+                <h3>Post New Problem & Reward</h3>
+                <label for="admin-problem-text">Problem Description:</label>
+                <textarea id="admin-problem-text" rows="5"></textarea>
+                <label for="admin-reward-text">Reward Description:</label>
+                <input type="text" id="admin-reward-text">
+                <button id="post-problem-button">Post Problem</button>
+            </div>
+
+            <h3>Submitted Ideas Overview</h3>
+            <ul id="admin-idea-list">
+                </ul>
+        </section>
+
+        <section id="user-idea-list-section">
+            <h2>Community Solutions</h2>
+            <ul id="user-idea-list">
+                </ul>
+        </section>
+
+        <section id="statistics-section">
+            <h2>Statistics</h2>
+            <div id="chart-container">
+                <canvas id="idea-statistics-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
