@@ -38,6 +38,7 @@ const currentProblemDisplay = document.getElementById('current-problem-display')
 const currentRewardDisplay = document.getElementById('current-reward-display');
 
 let currentIdeas = [];
+let isAdmin = false;
 
 // Nastavení navigačních odkazů
 function showSection(section) {
@@ -55,16 +56,20 @@ navHome.onclick = function() {
     showSection(homeSection);
     fetchProblemAndReward();
     fetchAndDisplayIdeas();
+    isAdmin = false;
 };
 navSubmit.onclick = function() {
     showSection(submitIdeaSection);
+    isAdmin = false;
 };
 navAdminLogin.onclick = function() {
     showSection(adminLoginSection);
+    isAdmin = false;
 };
 navLogout.onclick = function() {
     auth.signOut().then(function() {
         alert('Logged out!');
+        isAdmin = false;
         showSection(homeSection);
         fetchAndDisplayIdeas();
         navAdminLogin.style.display = 'block';
@@ -86,6 +91,7 @@ adminLoginForm.onsubmit = async function(e) {
             loginErrorMessage.style.display = 'none';
             alert('Admin logged in!');
             adminLoginForm.reset();
+        isAdmin = true;
             showSection(adminPanelSection);
             fetchAndDisplayIdeas();
         }
@@ -159,7 +165,7 @@ function renderIdeas() {
         userLi.innerHTML = "<div><h3>" + idea.name + "</h3><p>Date: " + idea.date + "</p><p>Proposal: " + (idea.proposal || 'N/A') + "</p></div>";
         userIdeaList.appendChild(userLi);
 
-        if (auth.currentUser) {
+        if (isAdmin) {
             const adminLi = document.createElement('li');
             adminLi.className = 'idea-item';
             adminLi.setAttribute('data-id', idea.idFirebase);
