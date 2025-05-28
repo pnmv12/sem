@@ -149,6 +149,7 @@ async function fetchProblemAndReward() {
 
 // Zobrazení nápadů pro uživatele a administrátora
 function renderIdeas() {
+    console.log(currentIdeas);
     userIdeaList.innerHTML = '';
     adminIdeaList.innerHTML = '';
     for (let i = 0; i < currentIdeas.length; i++) {
