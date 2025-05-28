@@ -275,7 +275,7 @@ postProblemButton.onclick = async function() {
 // Smazání nápadu administrátorem
 async function handleDelete(e) {
     var klic = e.target.getAttribute('data-id');
-    console.log(idFirebase)
+    console.log(klic)
     if (!confirm('Delete this idea?')) return;
    res = await fetch('/api/delete', {
         method: 'DELETE',
